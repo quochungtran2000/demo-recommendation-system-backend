@@ -1,7 +1,7 @@
-const Movie = require('../../models/movie.model');
+const DataMovie = require('../../models/DataMovie.model')
 
 const getMostVoteMovie = async (req,res) => {
-    await Movie.find()
+    await DataMovie.find()
         .sort({vote_count: -1})
         .limit(10)
         .then(movies => res.json(movies))
